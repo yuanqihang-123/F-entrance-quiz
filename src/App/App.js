@@ -40,7 +40,17 @@ class App extends Component {
     })
       .then((res) => res.json())
       .then((json) => {
-        console.log(json);
+        // eslint-disable-next-line no-eval
+        const obj = eval(json);
+        console.log(obj['1 组'].length);
+        this.setState({
+          group1: obj['1 组'],
+          group2: obj['2 组'],
+          group3: obj['3 组'],
+          group4: obj['4 组'],
+          group5: obj['5 组'],
+          group6: obj['6 组'],
+        });
       });
   }
 
@@ -56,6 +66,109 @@ class App extends Component {
             onClick={() => this.handleClick()}
           />
         </div>
+        {this.state.group1.length > 0 && (
+          <div>
+            <div>1 组</div>
+            <div className="button_div">
+              {this.state.group1.map((user, index) => {
+                return (
+                  <input
+                    className="name_button"
+                    type="button"
+                    value={`${user.id}.${user.name}`}
+                    key={index}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        )}
+        {this.state.group1.length > 0 && (
+          <div>
+            <div>2 组</div>
+            <div className="button_div">
+              {this.state.group2.map((user, index) => {
+                return (
+                  <input
+                    className="name_button"
+                    type="button"
+                    value={`${user.id}.${user.name}`}
+                    key={index}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        )}
+        {this.state.group1.length > 0 && (
+          <div>
+            <div>3 组</div>
+            <div className="button_div">
+              {this.state.group3.map((user, index) => {
+                return (
+                  <input
+                    className="name_button"
+                    type="button"
+                    value={`${user.id}.${user.name}`}
+                    key={index}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        )}
+        {this.state.group1.length > 0 && (
+          <div>
+            <div>4 组</div>
+            <div className="button_div">
+              {this.state.group4.map((user, index) => {
+                return (
+                  <input
+                    className="name_button"
+                    type="button"
+                    value={`${user.id}.${user.name}`}
+                    key={index}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        )}
+        {this.state.group1.length > 0 && (
+          <div>
+            <div>5 组</div>
+            <div className="button_div">
+              {this.state.group5.map((user, index) => {
+                return (
+                  <input
+                    className="name_button"
+                    type="button"
+                    value={`${user.id}.${user.name}`}
+                    key={index}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        )}
+        {this.state.group1.length > 0 && (
+          <div>
+            <div>6 组</div>
+            <div className="button_div">
+              {this.state.group6.map((user, index) => {
+                return (
+                  <input
+                    className="name_button"
+                    type="button"
+                    value={`${user.id}.${user.name}`}
+                    key={index}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        )}
+
         <div>
           <div className="buttom_title">成员列表</div>
           <div className="button_div">
