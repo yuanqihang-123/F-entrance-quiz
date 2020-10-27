@@ -6,6 +6,18 @@ class App extends Component {
   state = {
     // eslint-disable-next-line react/no-unused-state
     users: [],
+    // eslint-disable-next-line react/no-unused-state
+    group1: [],
+    // eslint-disable-next-line react/no-unused-state
+    group2: [],
+    // eslint-disable-next-line react/no-unused-state
+    group3: [],
+    // eslint-disable-next-line react/no-unused-state
+    group4: [],
+    // eslint-disable-next-line react/no-unused-state
+    group5: [],
+    // eslint-disable-next-line react/no-unused-state
+    group6: [],
   };
 
   componentDidMount() {
@@ -18,6 +30,18 @@ class App extends Component {
           users: json,
         })
       );
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  handleClick() {
+    fetch(`http://localhost:8080/users/split`, {
+      method: 'get',
+      // eslint-disable-next-line no-unused-vars
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        console.log(json);
+      });
   }
 
   render() {
